@@ -1,0 +1,22 @@
+databases:
+  - name: karaatati_website_DB
+    databaseName: karatati_website_db
+    user: karatati_website
+    region: singapore
+
+services:
+  - type: web
+    name: karatati_website
+    env: ruby
+    region: singapore
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: karatati_website_DB
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geektwitter</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<body>
+ <header>
+ <%= link_to root_path  do %>
+  <%= image_tag 'お店のロゴ②.png' ,class:'logo'%>
+  <% end %>
+  <div class="header-list">
+   <ul>
+   <% if user_signed_in? %>
+   <% if current_user.admin? %>
+     <li><%= link_to "introduction", tweets_introduction_path %></li>
+     <li><%= link_to "drink", tweets_drink_path %></li>
+     <li><%= link_to "food", tweets_food_path %></li>
+     <li><%= link_to "procedure", tweets_procedure_path %></li>
+    <% end %>
+    <li><%= button_to 'log out', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+     <li><%= link_to "新規登録", new_user_registration_path %></li>
+     <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
+   </ul>
+  </div>
+ </header>
+ <main>
+  <%= yield %>
+ </main>
+</body>
+</html>
+

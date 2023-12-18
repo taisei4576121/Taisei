@@ -11,7 +11,5 @@ class Admin::TweetsController < ApplicationController
         @tweet = Tweet.new
     end
 
-    def tweet_params
-        params.require(:tweet).permit(:body,:video,:image,:category)
-    end
+    
 end

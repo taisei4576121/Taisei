@@ -62,3 +62,7 @@ gem 'devise'
 gem 'carrierwave' 
 gem 'cloudinary'
 gem 'dotenv-rails'
+
+gem "importmap-rails"
+gem "turbo-rails"
+gem "stimulus-rails"

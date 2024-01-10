@@ -1,0 +1,41 @@
+.tweets-container {
+    width: 50%;
+    margin: 10px auto;
+  }
+  h1 {
+    text-align: center
+  }
+  h3 {
+    width: 100px;
+    margin: 30px auto;
+    text-align: center;
+  }
+  .tweet {
+    border-top: solid rgba(189, 119, 14, 0.557);
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+  .main-box {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .time {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .shousai {
+    color: black;
+    font-weight:  bold;
+  }
+  .henshuu {
+    color: rgba(0, 0, 0, 0.187);
+  }
+  .sakujo {
+    color: rgba(0, 0, 0, 0.144);
+    font-size: 15%;
+  }
+
+  .box1 {
+  height: 500px;
+  }

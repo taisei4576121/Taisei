@@ -1,13 +1,22 @@
 <h1>仕事の進め方一覧</h1>
-<% @tweets.each do |t| %>
-    <% if t.category == "procedure" %>  
-    <p>内容:<%= t.body %></p>
-    <%= t.user.email %>
-      <%=  video_tag t.video_url ,:controls => true if t.video?%>
-      <%= t.body %>
-      <%= t.created_at %>
-      <%= link_to "詳細へ", tweet_path(t.id) %>
-      <%= link_to "編集する", edit_tweet_path(t.id) %>
-      <%= button_to "削除する", tweet_path(t.id), method: :delete %>
-    <% end %>
+
+  <div class="tweets-container">
+  <% @tweets.each do |t| %>
+      <% if t.category == "procedure" %> 
+      <div class="tweet">
+        <div class="main-box">
+          <div class="left-container"><%= t.body %></div>
+           <div class="right-container"> 
+            <%= link_to "詳細へ", tweet_path(t.id) ,class: "shousai"%>
+            <%= link_to "編集する", edit_tweet_path(t.id),class: "henshuu" %>
+            
+           </div>
+        </div>
+      </div>
+        
+        <%=  video_tag t.video_url ,:controls => true if t.video?%>
+      <% end %>rails
+  
+      
   <% end %>
+  </div>
